@@ -9,3 +9,7 @@ function handleMouseMove(event) {
     body = document.body;
     console.log(event.clientX + " " + event.clientY);
 }
+
+img_json = JSON.parse('./json/img_json', function (error, data) {
+    console.log(data);
+})
