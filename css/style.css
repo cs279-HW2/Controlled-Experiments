@@ -1,0 +1,24 @@
+body, html{
+    background-color: #0088cc;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.container {
+    height: 100%;
+}
+.row{
+    height: 100%;
+}
+#femaleBTN {
+    margin-top: 200px;
+}
+
+#maleBTN {
+    margin-top: 200px;
+}
+#nextBTN{
+    position: absolute;
+    bottom:   20px;
+
+}

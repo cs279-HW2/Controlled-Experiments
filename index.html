@@ -1,40 +1,32 @@
 <!--inspired by https://stackoverflow.com/questions/7790725/javascript-track-mouse-position-->
-<style>
-.boxContainer {
-    display: table;
-}
-.box {
-    width: 1350px;
-    height: 650px;
-    background: #0088cc;
-    padding: 2%;
-    display: table-cell;
-    text-align: center;
-    vertical-align: bottom;
-}
-</style>
 
 <!DOCTYPE html>
 <html>
 	<head>
-	OPEN CONSOLE TO SEE MOUSE MOVEMENTS
+		<title>OPEN CONSOLE TO SEE MOUSE MOVEMENTS</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<script>
-		  (function() {
-		    document.onmousemove = handleMouseMove;
-		    function handleMouseMove(event) {
-		      doc = document.documentElement;
-		      body = document.body;
-		      console.log(event.clientX + " " + event.clientY);
-		    }
-		  })();
-		</script>
 
-		<div class="boxContainer">
-    		<div class="box">
-        <button>Next</button>
-    </div>
-</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 text-left">
+					<button id="femaleBTN">Female</button>
+				</div>
+				<div class="col-lg-6 text-center">
+					<button id="nextBTN">Next</button>
+				</div>
+				<div class="col-lg-3 text-right">
+					<button id="maleBTN">Male</button>
+				</div>
+			</div>
+		</div>
+
+		<!--script files-->
+		<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/trajectory.js"></script>
 	</body>
 </html>
