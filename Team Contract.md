@@ -48,6 +48,6 @@ We can check commits on github.
 
 Signed: Yuna Joung                       Date: 9/9/17
 Signed: Jingmei Hu			   Date: 9/9/17
-Signed: Xu Si  			                  Date 9/10/17
+Signed: Xu Si  			                  Date: 9/10/17
 
 
