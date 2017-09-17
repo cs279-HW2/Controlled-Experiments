@@ -14,19 +14,33 @@ for (var i = 0; i < images.length; i++) {
 	currentImage.style.zIndex = -i;
 }
 
+function handleMouseMove(event) {
+    doc = document.documentElement;
+    body = document.body;
+    console.log(event.clientX + " " + event.clientY);
+}
+
+function handleMouseMoveEnd(event) {
+	// stop tracing
+}
+
 // setup count
 var count = 0;
-buttonfemale.onclick = function(){
+//click on next button, change pic and start tracing
+buttonnext.onclick = function(){
 	var showFirst = images_list.shift();
 	// setup new zIndex
 	showFirst.style.zIndex = - index + count;
 	images_list.push(showFirst);
 	count++;
+	document.onmousemove = handleMouseMove;
 }
+
+//click on female or male button, stop tracing
+buttonfemale.onclick = function(){
+	document.onmousemove = handleMouseMoveEnd;
+}
+
 buttonmale.onclick = function(){
-	var showFirst = images_list.shift();
-	// setup new zIndex
-	showFirst.style.zIndex = - index + count;
-	images_list.push(showFirst);
-	count++;
+	document.onmousemove = handleMouseMoveEnd;
 }
