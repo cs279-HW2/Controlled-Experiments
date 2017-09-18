@@ -38,10 +38,10 @@ $.getJSON("./json/img_json.json", function(json) {
     currentSession = session1;
 });
 */
-var user = {name: "mark", age: "21", traject: [{x: 11, y:22}, {x: 22, y:33}]};
-
-localStorage.setItem("lastname", "Smith");
-localStorage.setItem('user', JSON.stringify(user));
+// var user = {name: "mark", age: "21", traject: [{x: 11, y:22}, {x: 22, y:33}]};
+//
+// localStorage.setItem("lastname", "Smith");
+// localStorage.setItem('user', JSON.stringify(user));
 
 // console.log(localStorage.getItem("lastname"));
 
