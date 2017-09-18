@@ -5,6 +5,11 @@ var img_json;
 var currentSession;
 session1 = [1,2,3,4,5,6,7,8,9]
 
+/*
+
+HU: it seems like we cannot move the mouse pointer to a specific position. (Stackoverflow told me). So I decide to start tracing when the user click on Next button, and stop tracing when the user click on Female or Male button. 
+For Details, please see onclock.js
+
 document.onmousemove = handleMouseMove;
 
 function handleMouseMove(event) {
@@ -12,7 +17,9 @@ function handleMouseMove(event) {
     body = document.body;
     console.log(event.clientX + " " + event.clientY);
 }
+*/
 
+// HU: for changing images, I wrote a different functions in onclick.js file.....
 function nextImg() {
     currentSession
 }
