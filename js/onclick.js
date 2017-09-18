@@ -1,6 +1,10 @@
 var images = document.getElementsByTagName('img');
+/*$.getJSON("./json/img_json.json", function(json) {
+    img_json = json;
+});*/
 var buttonfemale = document.getElementById('buttonfemale');
 var buttonmale = document.getElementById('buttonmale');
+var buttonnext = document.getElementById('buttonnext');
 var index = 1000;
 // array to store images
 var images_list = [];
