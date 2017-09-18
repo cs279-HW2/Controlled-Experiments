@@ -25,7 +25,7 @@ function nextImg() {
 }
 
 
-
+/*
 $.getJSON("./json/img_json.json", function(json) {
     img_json = json;
     // console.log(img_json);
@@ -37,7 +37,7 @@ $.getJSON("./json/img_json.json", function(json) {
     document.getElementById("box").style.backgroundSize = "1350px";
     currentSession = session1;
 });
-
+*/
 var user = {name: "mark", age: "21", traject: [{x: 11, y:22}, {x: 22, y:33}]};
 
 localStorage.setItem("lastname", "Smith");
