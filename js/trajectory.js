@@ -19,12 +19,6 @@ function handleMouseMove(event) {
 }
 */
 
-// HU: for changing images, I wrote a different functions in onclick.js file.....
-function nextImg() {
-    currentSession
-}
-
-
 /*
 $.getJSON("./json/img_json.json", function(json) {
     img_json = json;
