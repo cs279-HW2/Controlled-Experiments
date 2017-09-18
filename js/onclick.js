@@ -37,6 +37,7 @@ function handleMouseMoveEnd(event) {
 var count = 0;
 //click on next button, change pic and start tracing
 buttonnext.onclick = function(){
+    $(buttonnext).attr("disabled", "disabled");
 	/*
 	var showFirst = images_list.shift();
 	// setup new zIndex
@@ -56,9 +57,11 @@ buttonnext.onclick = function(){
 
 //click on female or male button, stop tracing
 buttonfemale.onclick = function(){
+    $(buttonnext).removeAttr("disabled")
 	document.onmousemove = handleMouseMoveEnd;
 }
 
 buttonmale.onclick = function(){
+    $(buttonnext).removeAttr("disabled")
 	document.onmousemove = handleMouseMoveEnd;
 }
