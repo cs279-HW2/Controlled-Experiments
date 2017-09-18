@@ -11,19 +11,7 @@ var buttonfemale = document.getElementById('buttonfemale');
 var buttonmale = document.getElementById('buttonmale');
 var buttonnext = document.getElementById('buttonnext');
 var index = 1000;
-// array to store images
-var images_list = [];
 
-/*
-// input images array
-for (var i = 0; i < images.length; i++) {
-	images_list[i] = images[i];
-	var currentImage = images_list[i];
-	// setup initial zIndex
-	// positive number is closer
-	currentImage.style.zIndex = -i;
-}
-*/
 function handleMouseMove(event) {
     doc = document.documentElement;
     body = document.body;
@@ -47,6 +35,7 @@ buttonnext.onclick = function(){
 	*/
     trajectAgg = {};
     traject =[];
+    $(buttonnext).attr("disabled", "disabled");
 	console.log(count);
 	document.getElementById("box").style.backgroundImage = "url(" + img_json[count] + ")";
 	console.log(img_json[count]);
@@ -63,6 +52,7 @@ localStorage.setItem("XU", "SI");
 
 //click on female or male button, stop tracing
 buttonfemale.onclick = function(){
+    $(buttonnext).removeAttr("disabled");
 	document.onmousemove = handleMouseMoveEnd;
 
     trajectAgg["xy"] = traject;
@@ -73,5 +63,6 @@ buttonfemale.onclick = function(){
 }
 
 buttonmale.onclick = function(){
+    $(buttonnext).removeAttr("disabled");
 	document.onmousemove = handleMouseMoveEnd;
 }
