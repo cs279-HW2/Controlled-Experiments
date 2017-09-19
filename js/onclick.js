@@ -25,6 +25,7 @@ function handleMouseMoveEnd(event) {
 
 // setup count
 var count = 0;
+
 //click on next button, change pic and start tracing
 buttonnext.onclick = function(){
 	/*
@@ -33,20 +34,33 @@ buttonnext.onclick = function(){
 	showFirst.style.zIndex = - index + count;
 	images_list.push(showFirst);
 	*/
+    var morph, gender, food, num;
     trajectAgg = {};
     traject =[];
-    if((count!=0) && (count!=12) && (count!=24) && (count!=36) && (count!=48) && (count!=60)) {
+    if((count!=0) && (count!=12) && (count!=24) && (count!=36) && (count!=48) && (count!=60) && (count!=72)) {
         $(buttonnext).attr("disabled", "disabled");
+        document.onmousemove = handleMouseMove;
     }
-	console.log(count);
+	//console.log(count);
 	document.getElementById("box").style.backgroundImage = "url(" + img_json[count] + ")";
-	console.log(img_json[count]);
+
+    if((count!=0) && (count!=12) && (count!=24) && (count!=36) && (count!=48) && (count!=60) && (count!=72)) {
+        //console.log(img_json[count].substring(6, 13));
+        var infoArray = img_json[count].substring(6, 13).split("-");
+        trajectAgg["food"] = infoArray[0];
+        trajectAgg["num"] = infoArray[1];
+        trajectAgg["gender"] = infoArray[2];
+        trajectAgg["morph"] = infoArray[3];
+    }
+    //console.log(infoArray[0]);
+
+
+    console.log(img_json[count]);
     document.getElementById("box").style.backgroundSize = "900px";
     document.getElementById("box").style.backgroundPosition = "center";
     document.getElementById("box").style.backgroundRepeat = "no-repeat";
     count++;
 
-	document.onmousemove = handleMouseMove;
 }
 
 
@@ -66,5 +80,11 @@ buttonfemale.onclick = function(){
 
 buttonmale.onclick = function(){
     $(buttonnext).removeAttr("disabled");
-	document.onmousemove = handleMouseMoveEnd;
+    document.onmousemove = handleMouseMoveEnd;
+
+    trajectAgg["xy"] = traject;
+    console.log(traject);
+    console.log(trajectAgg);
+    console.log('traject' + count);
+    localStorage.setItem('traject' + count, JSON.stringify(trajectAgg));
 }
