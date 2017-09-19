@@ -35,14 +35,16 @@ buttonnext.onclick = function(){
 	*/
     trajectAgg = {};
     traject =[];
-    $(buttonnext).attr("disabled", "disabled");
+    if((count!=0) && (count!=12) && (count!=24) && (count!=36) && (count!=48) && (count!=60)) {
+        $(buttonnext).attr("disabled", "disabled");
+    }
 	console.log(count);
 	document.getElementById("box").style.backgroundImage = "url(" + img_json[count] + ")";
 	console.log(img_json[count]);
     document.getElementById("box").style.backgroundSize = "900px";
     document.getElementById("box").style.backgroundPosition = "center";
     document.getElementById("box").style.backgroundRepeat = "no-repeat";
-	count++;
+    count++;
 
 	document.onmousemove = handleMouseMove;
 }

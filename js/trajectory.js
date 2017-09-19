@@ -1,9 +1,10 @@
 /**
  * Created by sophiasi on 9/13/17.
  */
-var img_json;
+/*var img_json;
 var currentSession;
 session1 = [1,2,3,4,5,6,7,8,9]
+*/
 
 /*
 
@@ -18,12 +19,6 @@ function handleMouseMove(event) {
     console.log(event.clientX + " " + event.clientY);
 }
 */
-
-// HU: for changing images, I wrote a different functions in onclick.js file.....
-function nextImg() {
-    currentSession
-}
-
 
 /*
 $.getJSON("./json/img_json.json", function(json) {
