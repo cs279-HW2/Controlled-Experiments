@@ -11,6 +11,8 @@ var buttonfemale = document.getElementById('buttonfemale');
 var buttonmale = document.getElementById('buttonmale');
 var buttonnext = document.getElementById('buttonnext');
 var index = 1000;
+var sessionStartTime;
+var sessionEndTime;
 
 function handleMouseMove(event) {
     doc = document.documentElement;
@@ -28,6 +30,8 @@ var count = 0;
 
 //click on next button, change pic and start tracing
 buttonnext.onclick = function(){
+    var d = new Date();
+
 	/*
 	var showFirst = images_list.shift();
 	// setup new zIndex
@@ -45,12 +49,15 @@ buttonnext.onclick = function(){
 	document.getElementById("box").style.backgroundImage = "url(" + img_json[count] + ")";
 
     if((count!=0) && (count!=12) && (count!=24) && (count!=36) && (count!=48) && (count!=60) && (count!=72)) {
+        sessionStartTime  = d.getTime();
+        console.log("starting time.... " + sessionStartTime);
         //console.log(img_json[count].substring(6, 13));
         var infoArray = img_json[count].substring(6, 13).split("-");
         trajectAgg["food"] = infoArray[0];
         trajectAgg["num"] = infoArray[1];
         trajectAgg["gender"] = infoArray[2];
         trajectAgg["morph"] = infoArray[3];
+
     }
     //console.log(infoArray[0]);
 
@@ -68,6 +75,9 @@ localStorage.setItem("XU", "SI");
 
 //click on female or male button, stop tracing
 buttonfemale.onclick = function(){
+    var d = new Date();
+    sessionEndTime  = d.getTime();
+    console.log("ending time.... " + sessionEndTime);
     $(buttonnext).removeAttr("disabled");
 	document.onmousemove = handleMouseMoveEnd;
 
@@ -75,10 +85,15 @@ buttonfemale.onclick = function(){
     console.log(traject);
 	console.log(trajectAgg);
 	console.log('traject' + count);
+	console.log('Time:' + (sessionEndTime - sessionStartTime));
+	trajectAgg["time"] = (sessionEndTime - sessionStartTime);
     localStorage.setItem('traject' + count, JSON.stringify(trajectAgg));
 }
 
 buttonmale.onclick = function(){
+    var d = new Date();
+    sessionEndTime  = d.getTime();
+    console.log("ending time.... " + sessionEndTime);
     $(buttonnext).removeAttr("disabled");
     document.onmousemove = handleMouseMoveEnd;
 
@@ -86,5 +101,7 @@ buttonmale.onclick = function(){
     console.log(traject);
     console.log(trajectAgg);
     console.log('traject' + count);
+    console.log('Time:' + (sessionEndTime - sessionStartTime));
+    trajectAgg["time"] = (sessionEndTime - sessionStartTime);
     localStorage.setItem('traject' + count, JSON.stringify(trajectAgg));
 }
