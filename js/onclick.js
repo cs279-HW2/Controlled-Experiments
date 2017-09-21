@@ -27,6 +27,11 @@ function handleMouseMoveEnd(event) {
 
 // setup count
 var count = 0;
+//
+
+document.getElementById("buttonnext").style.backgroundColor = "red";
+document.getElementById("buttonfemale").style.backgroundColor = "grey";
+document.getElementById("buttonmale").style.backgroundColor = "grey";
 
 //click on next button, change pic and start tracing
 buttonnext.onclick = function(){
@@ -43,6 +48,9 @@ buttonnext.onclick = function(){
     traject =[];
     if((count!=0) && (count!=12) && (count!=24) && (count!=36) && (count!=48) && (count!=60) && (count!=72)) {
         $(buttonnext).attr("disabled", "disabled");
+        document.getElementById("buttonnext").style.backgroundColor = "grey";
+        document.getElementById("buttonfemale").style.backgroundColor = "red";
+        document.getElementById("buttonmale").style.backgroundColor = "red";
         document.onmousemove = handleMouseMove;
     }
 	//console.log(count);
@@ -63,7 +71,7 @@ buttonnext.onclick = function(){
 
 
     console.log(img_json[count]);
-    document.getElementById("box").style.backgroundSize = "900px";
+    document.getElementById("box").style.backgroundSize = "800px";
     document.getElementById("box").style.backgroundPosition = "center";
     document.getElementById("box").style.backgroundRepeat = "no-repeat";
     count++;
@@ -78,6 +86,9 @@ buttonfemale.onclick = function(){
     var d = new Date();
     sessionEndTime  = d.getTime();
     console.log("ending time.... " + sessionEndTime);
+    document.getElementById("buttonnext").style.backgroundColor = "red";
+    document.getElementById("buttonfemale").style.backgroundColor = "grey";
+    document.getElementById("buttonmale").style.backgroundColor = "grey";
     $(buttonnext).removeAttr("disabled");
 	document.onmousemove = handleMouseMoveEnd;
 
@@ -94,6 +105,9 @@ buttonmale.onclick = function(){
     var d = new Date();
     sessionEndTime  = d.getTime();
     console.log("ending time.... " + sessionEndTime);
+    document.getElementById("buttonnext").style.backgroundColor = "red";
+    document.getElementById("buttonfemale").style.backgroundColor = "grey";
+    document.getElementById("buttonmale").style.backgroundColor = "grey";
     $(buttonnext).removeAttr("disabled");
     document.onmousemove = handleMouseMoveEnd;
 
