@@ -29,7 +29,7 @@ function handleMouseMoveEnd(event) {
 var count = 0;
 //
 
-document.getElementById("buttonnext").style.backgroundColor = "red";
+document.getElementById("buttonnext").style.backgroundColor = "white";
 document.getElementById("buttonfemale").style.backgroundColor = "grey";
 document.getElementById("buttonmale").style.backgroundColor = "grey";
 
@@ -49,8 +49,8 @@ buttonnext.onclick = function(){
     if((count!=0) && (count!=12) && (count!=24) && (count!=36) && (count!=48) && (count!=60) && (count!=72)) {
         $(buttonnext).attr("disabled", "disabled");
         document.getElementById("buttonnext").style.backgroundColor = "grey";
-        document.getElementById("buttonfemale").style.backgroundColor = "red";
-        document.getElementById("buttonmale").style.backgroundColor = "red";
+        document.getElementById("buttonfemale").style.backgroundColor = "white";
+        document.getElementById("buttonmale").style.backgroundColor = "white";
         document.onmousemove = handleMouseMove;
     }
 	//console.log(count);
@@ -79,14 +79,14 @@ buttonnext.onclick = function(){
 }
 
 
-localStorage.setItem("XU", "SI");
+//localStorage.setItem("XU", "SI");
 
 //click on female or male button, stop tracing
 buttonfemale.onclick = function(){
     var d = new Date();
     sessionEndTime  = d.getTime();
     console.log("ending time.... " + sessionEndTime);
-    document.getElementById("buttonnext").style.backgroundColor = "red";
+    document.getElementById("buttonnext").style.backgroundColor = "white";
     document.getElementById("buttonfemale").style.backgroundColor = "grey";
     document.getElementById("buttonmale").style.backgroundColor = "grey";
     $(buttonnext).removeAttr("disabled");
@@ -105,7 +105,7 @@ buttonmale.onclick = function(){
     var d = new Date();
     sessionEndTime  = d.getTime();
     console.log("ending time.... " + sessionEndTime);
-    document.getElementById("buttonnext").style.backgroundColor = "red";
+    document.getElementById("buttonnext").style.backgroundColor = "white";
     document.getElementById("buttonfemale").style.backgroundColor = "grey";
     document.getElementById("buttonmale").style.backgroundColor = "grey";
     $(buttonnext).removeAttr("disabled");
