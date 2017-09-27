@@ -17,7 +17,7 @@ var sessionEndTime;
 function handleMouseMove(event) {
     doc = document.documentElement;
     body = document.body;
-    console.log(event.clientX + " " + event.clientY);
+    //console.log(event.clientX + " " + event.clientY);
     traject.push({x: event.clientX, y: event.clientY});
 }
 
